@@ -15,8 +15,8 @@ from exceptions import TgBotSendException, UnknownResponseException, LoginExcept
 # curl -X POST -H 'Content-Type:multipart/form-data' -F chat_id='-1002427618780'
 # -F text='message' 'https://api.telegram.org/bot7230503141:AAGp0HCQ71WIFEE2GauP_fxS9LdOmL8dSa4/sendMessage'
 
-# chat_id = -1002427618780
-chat_id = 216992382
+chat_id = -1002427618780
+#chat_id = 216992382
 bot_token = '7230503141:AAGp0HCQ71WIFEE2GauP_fxS9LdOmL8dSa4'
 
 logging.basicConfig(level=logging.INFO, filename = "apps.log",
