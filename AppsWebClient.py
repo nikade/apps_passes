@@ -70,7 +70,7 @@ class AppsWebClient:
             PassReportItem(
                 datetime.strptime(
                     r.parent.parent.find('td', style='text-align: center;')
-                      .text +'.'+str(last_year) + ' ' + str(r.next_sibling.text).rstrip(),
+                      .text +'.'+str(last_year) + ' ' + str(r.next_sibling).rstrip(),
             '%d.%m.%Y %H:%M:%S'),
                 r.attrs['src'].endswith('in.png')
             )
