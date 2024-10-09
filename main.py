@@ -2,8 +2,6 @@ import datetime
 import logging
 import time
 
-from sympy.physics.units import current
-
 from AppsWebClient import AppsWebClient
 from TgBot import TgBot
 from exceptions import TgBotSendException, UnknownResponseException, LoginException
@@ -16,10 +14,10 @@ from exceptions import TgBotSendException, UnknownResponseException, LoginExcept
 # -F text='message' 'https://api.telegram.org/bot7230503141:AAGp0HCQ71WIFEE2GauP_fxS9LdOmL8dSa4/sendMessage'
 
 chat_id = -1002427618780
-#chat_id = 216992382
+# chat_id = 216992382
 bot_token = '7230503141:AAGp0HCQ71WIFEE2GauP_fxS9LdOmL8dSa4'
 
-logging.basicConfig(level=logging.INFO, filename = "apps.log",
+logging.basicConfig(level=logging.INFO, filename="apps.log",
                     filemode="a", format="%(asctime)s %(levelname)s %(message)s")
 
 tg_bot = TgBot(bot_token, chat_id)
@@ -29,8 +27,8 @@ last_date = dict()
 error_count = 0
 
 while True:
-    #curr_date = datetime.datetime.now()
-    curr_date = datetime.datetime.strptime("09.10.2024","%d.%m.%Y")
+    # curr_date = datetime.datetime.now()
+    curr_date = datetime.datetime.strptime("09.10.2024", "%d.%m.%Y")
     try:
         for child in client.childs:
             passes = client.get_passing(child, curr_date, curr_date)
@@ -64,6 +62,6 @@ while True:
         logging.error(str(e))
     except Exception as e:
         logging.error(str(e))
-        error_count+=1
+        error_count += 1
         msg = f"Неизвестная ошибка, засыпаю на {error_count} часов \"{str(e)}\""
         time.sleep(3600 * error_count)
