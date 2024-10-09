@@ -13,8 +13,8 @@ from exceptions import TgBotSendException, UnknownResponseException, LoginExcept
 # curl -X POST -H 'Content-Type:multipart/form-data' -F chat_id='-1002427618780'
 # -F text='message' 'https://api.telegram.org/bot7230503141:AAGp0HCQ71WIFEE2GauP_fxS9LdOmL8dSa4/sendMessage'
 
-chat_id = -1002427618780
-# chat_id = 216992382
+#chat_id = -1002427618780
+chat_id = 216992382
 bot_token = '7230503141:AAGp0HCQ71WIFEE2GauP_fxS9LdOmL8dSa4'
 
 logging.basicConfig(level=logging.INFO, filename="apps.log",
@@ -26,9 +26,10 @@ client = AppsWebClient("+79132157888", "4067")
 last_date = dict()
 error_count = 0
 
+logging.info("Старт")
+
 while True:
-    # curr_date = datetime.datetime.now()
-    curr_date = datetime.datetime.strptime("09.10.2024", "%d.%m.%Y")
+    curr_date = datetime.datetime.now()
     try:
         for child in client.childs:
             passes = client.get_passing(child, curr_date, curr_date)
